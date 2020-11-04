@@ -1,0 +1,75 @@
+{% extends "banner.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<!-- banner -->
+<!-- header -->
+<header class="index-banner">
+    <!-- nav -->
+    <nav class="main-header">
+      <div id="brand" data-aos="zoom-in-up">
+        <div id="logo">
+          <a href="index.html">
+            <i class="fas fa-shopping-bag"></i>
+          </a>
+        </div>
+        <div id="word-mark">
+          <h1 >
+            <a href="index.html" style="font-family: 'Dancing Script', cursive;">Local Shop</a>
+          </h1>
+        </div>
+      </div>
+      <div id="menu">
+        <div id="menu-toggle">
+          <div id="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+        <ul class="text-center text-capitalize nav-agile" data-aos="zoom-in-up">
+          <li>
+            <a href="{{ url_for('home.landingpage') }}" class="active">Home</a>
+          </li>
+          <li>
+            <a href='{{url_for("auth.signup")}}' class="scroll">Register</a>
+          </li>
+          <li>
+            <a href='{{url_for("auth.login")}}' class="scroll">Login</a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+    <!-- //nav -->
+	<!-- banner -->
+	<div class="banner layer" id="home">
+		<div class="container">
+			<div class="row banner-text">
+				<div class="slider-info col-lg-8">
+					<div class="agileinfo-logo mt-5">
+						<h2 data-aos="fade-down">
+							<i class="fas fa-shopping-bag text-center"></i>  <strong style="font-family: 'Dancing Script', cursive;">Local Shop</strong>
+						</h2>
+					</div>
+					
+					<a class="btn mt-4 mr-2 text-capitalize" data-aos="fade-up" href="#" data-toggle="modal" data-target="#exampleModalCenter1" role="button">Welcome To Local shop</a>
+					<a class="btn mt-4 text-capitalize" data-aos="fade-up" href="#" data-toggle="modal" data-target="#exampleModal" role="button">We keep your records and stock up-to-date </a>
+				</div>
+				<div class="col-lg-4 col-md-8 mt-lg-0 mt-5 banner-form" data-aos="fade-left">
+					<!-- <h5><i class="fas mr-2 fa-laptop"></i> Register Now</h5>
+					<form action="#" class="mt-4" method="post">
+						<input class="form-control" type="text" name="Name" placeholder="Name" required="" />
+						<input class="form-control" type="email" name="Email" placeholder="Email" required="" />
+						<input class="form-control" type="text" name="Number" placeholder="Phone Number" required="" />
+						<input class="form-control" type="password" name="Number" placeholder="Password" required="" />
+						<input class="form-control text-capitalize" type="submit" value="Register Account">
+					</form> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+</header>
+<!-- //header -->
+<!-- //banner -->
+{% endblock %}

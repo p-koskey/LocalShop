@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>Data Entry Dashboard</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="../../../../static/css/bootstraptwo.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/component.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/export.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/flipclock.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/circles.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/styletwo.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- font-awesome-icons -->
+<link href="../../../../static/css/font-awesome2.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+<body>
+<!-- banner -->
+<div class="wthree_agile_admin_info">
+		  <!-- /w3_agileits_top_nav-->
+		  <!-- /nav-->
+		  <div class="w3_agileits_top_nav">
+			<ul id="gn-menu" class="gn-menu-main">
+			  	
+				<li class="second logo"><h1><a href="{{url_for('home.dataentry')}}"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Data Entry Dashboard </a></h1></li>
+					<li class="second admin-pic">
+				       <ul class="top_dp_agile">
+									<li class="dropdown profile_details_drop">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+											<div class="profile_img">	
+												<span class="prfil-img"><img src="images/admin.jpg" alt=""> </span> 
+											</div>	
+										</a>
+										<ul class="dropdown-menu drp-mnu">
+											<li> <a href="#"> Admin</a> </li>  
+                                            <li> <a href="#">Data Clerk</a> </li>
+                                            <li> <a href="#">Inventory</a> </li>
+										</ul>
+									</li>
+									
+						</ul>
+				</li>
+				<li class="second top_bell_nav">
+                    <a href='{{ url_for("home.dataentry") }}'> Home</a>
+				</li>
+				<li class="second top_bell_nav">
+                    <a href="{{url_for('home.add_product')}}">Add Products</a> 
+				</li>
+				
+                <li class="second top_bell_nav">
+                    <a href="{{url_for('home.request')}}">Request product supply</a> 
+				</li>
+				<li class="second top_bell_nav">
+                    <a href="{{url_for('auth.logout')}}">Logout</a> 
+				</li>
+
+			</ul>
+			<!-- //nav -->
+			
+		</div>
+		<div class="clearfix"></div>
+		<!-- //w3_agileits_top_nav-->
+		<!-- /inner_content-->
+				<div class="inner_content">
+				    <!-- /inner_content_w3_agile_info-->
+					<div class="inner_content_w3_agile_info">
+					<!-- /agile_top_w3_grids-->
+					   <div class="agile_top_w3_grids">
+					          <ul class="ca-menu">
+                                    <li>
+										<a href="#">
+											
+											<i class="fa fa-archive" aria-hidden="true"></i>
+											<div class="ca-content">
+												<h4 class="ca-main">
+													{{items}}</h4>
+												<h3 class="ca-sub">Total Items</h3>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+										  <i class="fa fa-archive" aria-hidden="true"></i>
+											<div class="ca-content">
+												<h4 class="ca-main one">20</h4>
+												<h3 class="ca-sub one">Total Spoilt</h3>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-money" aria-hidden="true"></i>
+											<div class="ca-content">
+											<h4 class="ca-main two">100</h4>
+												<h3 class="ca-sub two">Total Buying Price</h3>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fa fa-money" aria-hidden="true"></i>
+											<div class="ca-content">
+												<h4 class="ca-main three">400</h4>
+												<h3 class="ca-sub three">Total Selling Price</h3>
+											</div>
+										</a>
+									</li>
+										<li>
+										<a href="#">
+											<i class="fa fa-money" aria-hidden="true"></i>
+											<div class="ca-content">
+												<h4 class="ca-main four">4800</h4>
+												<h3 class="ca-sub four">Total Profit</h3>
+											</div>
+										</a>
+									</li>
+									<div class="clearfix"></div>
+								</ul>
+					   </div>
+					 <!-- //agile_top_w3_grids-->
+								   
+						<!-- //agile_top_w3_post_sections-->
+							
+						 <!--/prograc-blocks_agileits-->
+						 <div class="prograc-blocks_agileits">
+								
+								
+							<div class="col-md-6 bars_agileits agile_info_shadow">
+							  <h3 class="w3_inner_tittle two">STATUS OF SENT REQUESTS</h3>
+							  <div class="content-section">
+							   <div class="outer">
+								 <div class="middle">
+								   <div class="inner"">
+									
+									 {% if request %}
+									 <hr class="intro-divider">
+									 <div class="center">
+									   <table class="table table-striped table-bordered">
+										 <thead>
+										   <tr>
+											 <th width="20%"> Product </th>
+											 <th width="20%">Total Required </th>
+											 <th width="15%"> Status</th>
+											 <th width="10%" style="color: red;"> Delete</th>
+										   </tr>
+										 </thead>
+										 <tbody>
+										 {% for request in request %}
+										   
+											   <tr>
+																							
+												 
+												   <td> {{ request.productname }} </td>
+												   <td> {{ request.total_required }} </td>
+												   <td>
+												   {% if request.approval_status %}
+													 {{ request.approval_status }}
+												   {% else %}
+													 Pending
+												   {% endif %}
+												 </td>
+												 <td>
+												 {% if request.approval_status %}
+												 <a href="{{url_for('home.delete_request',request_id=request.id)}}" style="color: red;">Delete</a>
+												   {% else %}
+													 Pending
+												   {% endif %}
+												</td>
+											   </tr>
+										 
+										 {% endfor %}
+										 </tbody>
+									   </table>
+									 </div>
+								   {% endif %} 
+									 </div>
+								   </div>
+								 </div>
+							   </div>
+						   </div>
+						   <div class="col-md-6 fallowers_agile agile_info_shadow">
+							   <h3 class="w3_inner_tittle two">All Products</h3>
+										   <div class="work-progres">
+											   <div class="table-responsive">
+												   <table class="table table-hover">
+													 <thead>
+													   <tr>
+														 <th>#</th>
+														 <th>Product Name</th>
+														 <th>Total in stock</th>                                   
+																						   
+														 <th>Status</th>
+						   
+													 </tr>
+												 </thead>
+												 <tbody>
+												   
+												   {% for product in products%}
+												   <tr>
+													 <td>{{product.id}}</td>
+													 <td>{{product.productname}}</td>
+													 <td>{{product.stock}}</td>                                 
+													 {%if product.stock < 5%}						 
+														 <td><span class="label label-danger">stock is running out</span></td>
+													 
+													   {%elif product.stock  < 10 %}
+													   <td><span class="label label-warning">restock soon</span></td>
+													   {% elif product.stock >=10 %}
+													   <td><span class="label label-success">enough stock</span></td>
+													   {%endif%}
+													   
+												 </tr>
+												 {%endfor%}
+											 </tbody>
+										 </table>
+									   </div>
+								   </div>											
+						   </div>
+									 <div class="clearfix"></div>
+							</div>
+
+							  <!--//prograc-blocks_agileits-->
+						
+						
+						
+					
+				    </div>
+					<!-- //inner_content_w3_agile_info-->
+				</div>
+		<!-- //inner_content-->
+	</div>
+<!-- banner -->
+<!-- js -->
+
+<script type="text/javascript" src="../../static/js2/jquery-2.1.4.min.js"></script>
+
+	<!-- /amcharts -->
+				<script src="../../static/js2/amcharts.js"></script>
+		       <script src="../../static/js2/serial.js"></script>
+				<script src="../../static/js2/export.js"></script>	
+				<script src="../../static/js2/light.js"></script>
+				<!-- Chart code -->
+	 
+<!-- Chart code -->
+
+
+	<!-- //amcharts -->
+		<script src="../../static/js2/chart1.js"></script>
+				<script src="../../static/js2/Chart.min.js"></script>
+		<script src="../../static/js2/modernizr.custom.js"></script>
+		
+		<script src="../../static/js2/classie.js"></script>
+		<script src="../../static/js2/gnmenu.js"></script>
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+			<!-- script-for-menu -->
+
+
+
+<!-- //js -->
+<script src="../../static/js2/screenfull.js"></script>
+		<script>
+		$(function () {
+			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+			if (!screenfull.enabled) {
+				return false;
+			}
+
+			
+
+			$('#toggle').click(function () {
+				screenfull.toggle($('#container')[0]);
+			});	
+		});
+		</script>
+		<script src="../../static/js2/flipclock.js"></script>
+	
+	<script type="text/javascript">
+		var clock;
+		
+		$(document).ready(function() {
+			
+			clock = $('.clock').FlipClock({
+		        clockFace: 'HourlyCounter'
+		    });
+		});
+	</script>
+<script src="../../static/js2/bars.js"></script>
+<script src="../../static/js2/jquery.nicescroll.js"></script>
+<script src="../../static/js2/scripts.js"></script>
+
+<script type="text/javascript" src="../../static/js2/bootstrap-3.1.1.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block styles%}
+    {{super()}}
+        <link rel="stylesheet" href="{{url_for('static',filename='../../../static/css/style.css')}}">
+ {% endblock %}
+{% block body %}
+<header class="index-banner" >
+  <!-- nav -->
+  <nav class="main-header" style="background-color:grey;">
+    <div id="brand" data-aos="zoom-in-up">
+         <div id="word-mark">
+        <h1 >
+          <a href="{{url_for('home.landingpage')}}" style="font-family: 'Dancing Script', cursive;">Local Shop</a>
+        </h1>
+      </div>
+    </div>
+    <div id="menu">
+      <div id="menu-toggle">
+        <div id="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <ul class="text-center text-capitalize nav-agile" data-aos="zoom-in-up">
+        <li>
+          <a href="{{ url_for('home.landingpage') }}" class="active">Home</a>
+        </li>
+        <li>
+          <a href='{{url_for("auth.signup")}}' class="scroll">Register</a>
+        </li>
+        <li>
+          <a href='{{url_for("auth.login")}}' class="scroll">Login</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+  <div class="clearfix"></div>
+<div class="content-section" style="margin: 150px;">
+  <div class="center">
+    <h1>Login</h1>
+    <br/>
+    {{ utils.flashed_messages() }}
+    <!-- #changedthis -->
+    {{ wtf.quick_form(form) }} 
+  </div>
+</div>
+{% endblock %}

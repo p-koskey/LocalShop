@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Local Shop</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Landing Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+	
+	<!-- animation css files -->
+	<link rel="stylesheet" href="static/css/animation-aos.css">
+	<link href='static/css/aos.css' rel='stylesheet prefetch' type="text/css" media="all" />
+	<!-- //animation css files -->
+
+	<!-- css files -->
+    <link href="static/css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
+    <link href="static/css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
+    <!-- <link href="css/fontawesome-all.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+	<!-- //css files -->
+	
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+	<!-- //google fonts -->
+	
+</head>
+
+<body>
+
+   {%block body%} {%endblock%}
+
+    <!--Bootstrap CDN-->
+    <script src="static/jsjquery-2.2.3.min.js"></script>
+    <script src="static/jsbootstrap.js"></script>
+    <!-- //js -->
+	
+	<!-- animation js -->
+	<script src='static/js/aos.js'></script>
+	<script>
+		AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+
+    </script>
+    <script>
+		$(() => {
+
+		  //On Scroll Functionality
+		  $(window).scroll(() => {
+			var windowTop = $(window).scrollTop();
+			windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+			windowTop > 100 ? $('ul.nav-agile').css('top', '50px') : $('ul.nav-agile').css('top', '160px');
+		  });
+
+		  //Click Logo To Scroll To Top
+		  $('#logo').on('click', () => {
+			$('html,body').animate({
+			  scrollTop: 0
+			}, 500);
+		  });
+
+		 /*
+		  //Smooth Scrolling Using Navigation Menu
+		  $('a[href*="#"]').on('click', function (e) {
+			$('html,body').animate({
+			  scrollTop: $($(this).attr('href')).offset().top - 100
+			}, 500);
+			e.preventDefault();
+		  });
+		 */
+
+		  //Toggle Menu
+		  $('#menu-toggle').on('click', () => {
+			$('#menu-toggle').toggleClass('closeMenu');
+			$('ul').toggleClass('showMenu');
+
+			$('li').on('click', () => {
+			  $('ul').removeClass('showMenu');
+			  $('#menu-toggle').removeClass('closeMenu');
+			});
+		  });
+
+		});
+	</script>
+	<!-- //sticky nav bar -->
+
+	<script src="static/jssmoothscroll.js"></script><!-- Smooth scrolling -->
+
+    <!-- start-smoth-scrolling -->
+    <script src="static/jsmove-top.js"></script>
+    <script src="static/jseasing.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            /*
+			var defaults = {
+				  containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			 };
+			*/
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>

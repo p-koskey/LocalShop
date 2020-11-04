@@ -1,0 +1,84 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}New Request{% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>Data Entry Dashboard</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="../../../../static/css/bootstraptwo.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/component.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/export.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/flipclock.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/circles.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/style_grid.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../../static/css/styletwo.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- font-awesome-icons -->
+<link href="../../../../static/css/font-awesome2.css" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+<body>
+<!-- banner -->
+<div class="wthree_agile_admin_info">
+		  <!-- /w3_agileits_top_nav-->
+		  <!-- /nav-->
+		  <div class="w3_agileits_top_nav">
+			<ul id="gn-menu" class="gn-menu-main">
+			  	
+				<li class="second logo"><h1><a href="{{url_for('home.dataentry')}}"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Data Entry Dashboard </a></h1></li>
+					<li class="second admin-pic">
+				       <ul class="top_dp_agile">
+									<li class="dropdown profile_details_drop">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+											<div class="profile_img">	
+												<span class="prfil-img"><img src="images/admin.jpg" alt=""> </span> 
+											</div>	
+										</a>
+										<ul class="dropdown-menu drp-mnu">
+											<li> <a href="#"> Admin</a> </li>  
+                                            <li> <a href="#">Data Clerk</a> </li>
+                                            <li> <a href="#">Inventory</a> </li>
+										</ul>
+									</li>
+									
+						</ul>
+				</li>
+				<li class="second top_bell_nav">
+                    <a href='{{ url_for("home.dataentry") }}'> Home</a>
+				</li>
+				<li class="second top_bell_nav">
+                    <a href="{{url_for('home.add_product')}}">Add Products</a> 
+				</li>
+				
+                <li class="second top_bell_nav">
+                    <a href="{{url_for('home.request')}}">Request product supply</a> 
+				</li>
+				<li class="second top_bell_nav">
+                    <a href="{{url_for('auth.logout')}}">Logout</a> 
+				</li>
+
+			</ul>
+			<!-- //nav -->
+			
+		</div>
+		<div class="clearfix"></div>
+<div class="content-section" style="margin: 150px;">
+  <div class="center">
+    <h1>Create a new supply request:</h1>
+    <br/>
+    <!-- #changedthis -->
+    {{ utils.flashed_messages() }}
+    {{ wtf.quick_form(form) }} 
+  </div>
+</div>
+{% endblock %}
